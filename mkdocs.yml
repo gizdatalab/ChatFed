@@ -1,0 +1,48 @@
+site_name: ChatFed
+site_description: Modular “Lego” framework for building open-source chatbots
+site_url: https://your-org.github.io/ChatFed
+
+repo_url: https://github.com/your-org/ChatFed
+edit_uri: edit/main/docs/
+
+nav:
+  - Home: index.md
+  - Quick-start: quickstart.md
+  - Architecture: architecture.md
+  - Component Registry: registry.md
+  - Contributing: contributing.md
+  - API Reference:
+      - Core Runtime: reference/core.md
+      - Python SDK: reference/sdk.md
+      - Helm Charts: reference/helm.md
+  - Release Notes: changelog.md
+
+theme:
+  name: material
+  logo: assets/logo.png          # optional
+  favicon: assets/favicon.png    # optional
+  palette:
+    scheme: default
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.sections
+    - navigation.tracking
+    - content.code.annotate
+    - content.tabs.link
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          setup_commands:
+            - "import sys, os; sys.path.append(os.path.abspath('src'))"
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - toc:
+      permalink: true
